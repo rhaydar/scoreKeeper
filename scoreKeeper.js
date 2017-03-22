@@ -7,3 +7,14 @@ pl1Button.addEventListener("click", function() {
 	pl1Score++;
 	pl1Display.textContent = pl1Score;
 })
+
+// player two button and score display
+var pl2Score = 0;
+var pl2Display = document.getElementById("pl2Display");
+var pl2Button = document.querySelectorAll("button")[1];
+
+pl2Button.addEventListener("click", function() {
+	pl2Score++;
+	pl2Display.textContent = pl2Score;
+})
+
