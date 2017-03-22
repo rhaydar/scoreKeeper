@@ -1,3 +1,5 @@
+var winningScore = 5;
+
 // player one button and score display
 var pl1Score = 0;
 var pl1Display = document.getElementById("pl1Display");
@@ -6,6 +8,10 @@ var pl1Button = document.querySelector("button");
 pl1Button.addEventListener("click", function() {
 	pl1Score++;
 	pl1Display.textContent = pl1Score;
+	if (pl1Score === winningScore) {
+		pl1Display.classList.add("winner");
+	}
+
 })
 
 // player two button and score display
@@ -16,6 +22,9 @@ var pl2Button = document.querySelectorAll("button")[1];
 pl2Button.addEventListener("click", function() {
 	pl2Score++;
 	pl2Display.textContent = pl2Score;
+	if (pl2Score === winningScore) {
+		pl2Display.classList.add("winner");
+	}
 });
 
 // resets the score of the players
@@ -23,6 +32,8 @@ var resetButton = document.querySelectorAll("button")[2];
 resetButton.addEventListener("click", function() {
 	pl1Score = pl2Score = 0;
 	pl1Display.textContent = pl2Display.textContent = "0";
+	pl1Display.classList.remove("winner");
+	pl2Display.classList.remove("winner");
 });
 
 // input field changes winning score and resets the game
