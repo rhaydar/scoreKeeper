@@ -18,3 +18,10 @@ pl2Button.addEventListener("click", function() {
 	pl2Display.textContent = pl2Score;
 })
 
+// resets the score of the players
+var resetButton = document.querySelectorAll("button")[2];
+resetButton.addEventListener("click", function() {
+	pl1Score = pl2Score = 0;
+	pl1Display.textContent = pl2Display.textContent = "0";
+});
+
